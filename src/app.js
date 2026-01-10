@@ -11,6 +11,10 @@ const app = express()
 app.use(morgan("dev")) // khi nào dùng dev thì bật mode này
 app.use(helmet()) // giup bao mat ung dung web bang cach tu dong them cac HTTP security header
 app.use(compression())
+app.use(express.json())
+app.use(express.urlencoded({
+    extended: true
+}))
 
 // init db 
 require('./dbs/init.mongodb')
@@ -18,16 +22,7 @@ require('./dbs/init.mongodb')
 //checkOverload()
 
 
-// init routes
-app.get('/', (req, res, next) => {
-
-    const strCompress = 'Quang Trung'
-
-    return res.status(200).json({
-        message: 'Hello A Dep zai',
-        //metadata: strCompress.repeat(1000)
-    })
-})
-
+//init routes
+app.use('/', require('./routes'))
 //handling error
 module.exports = app

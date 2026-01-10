@@ -1,0 +1,6 @@
+install package snip mongodb for nodejs tren vscode
+
+const hodelShop = await shopModel.findOne({ email }).lean()
+
+- dùng lean() trả về object thuần tuý của js, không dùng thì sẽ return về 1 object của mongoose 
+- dùng lean() sẽ query nhanh hơn

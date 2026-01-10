@@ -1,0 +1,10 @@
+refreshToken sẽ giúp detect các hacker
+
+
+1. tạo 1 cặp token 
+2. giải quyết ra publickeystring sau đó lưu vào keytoken 
+3. từ keystring tạo ra 1 cặp token cho shop
+
+
+type : 'pkcs1' // pkcs1 la public key CryptoGraphy Standards I - tiêu chuẩn cho RSA bất đối xứng
+format: 'pem'

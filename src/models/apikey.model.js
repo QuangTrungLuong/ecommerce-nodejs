@@ -8,7 +8,7 @@ const COLLECTION_NAME = 'Apikeys'
 const apiKeySchema = new Schema({
     key: {
         type: String,
-        require: true,
+        required: true,
         unique: true
     },
     status: {
@@ -25,8 +25,11 @@ const apiKeySchema = new Schema({
         default: Date.now,
         expires: '30d'
     },
-    {
-        timestamps: true,
-        collection: COLLECTION_NAME
-    }
+}, {
+
+    timestamps: true,
+    collection: COLLECTION_NAME
 });
+
+//export the module 
+module.exports = model(DOCUMENT_NAME, apiKeySchema);

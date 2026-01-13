@@ -19,3 +19,4 @@ class AccessController {
 }
 
 module.exports = new AccessController()
+

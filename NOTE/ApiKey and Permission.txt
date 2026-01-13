@@ -1,0 +1,3 @@
+check permission
+1. Kiểm tra permission có tồn tại không 
+2. Kiểm tra permission có hợp lệ không 

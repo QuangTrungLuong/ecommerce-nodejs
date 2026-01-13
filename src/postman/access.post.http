@@ -4,9 +4,9 @@
 ### signup
 POST {{url_dev}}/shop/signup
 Content-Type: application/json
-x-api-key: 55f8befe03cad010a6bb2488601cb21559a65d360db0af2102ad3773fff0fb12f921ff2bf79b2b2ae298f4ad70d7c752824927c8ef205bb56d57c78d73347b2c
+x-api-key: 1f87c6475f4da289116fc8eb3cea55efd7b024fbd286a115d066d3672a9a366aae1ab47a308d9d7a37d70761c8d64ee28d31c16f9617aa65b89da9a7aaf3aaa8
 {
     "name" : "SHOP TRUNG 3",
-    "email" : "test1234@gmail.com",
+    "email" : "test12345@gmail.com",
     "password" : "DepTraiCoJSai" 
 }

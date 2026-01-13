@@ -29,7 +29,7 @@ const apiKey = async (req, res, next) => {
                 message: 'Forbidden Error'
             })
         }
-        res.objKey = objKey
+        req.objKey = objKey
         return next() // cho phep request di tiep
 
     } catch (error) {

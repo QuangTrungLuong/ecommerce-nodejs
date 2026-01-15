@@ -1,5 +1,6 @@
 'use strict'
 
+const { CREATED } = require("../core/success.response")
 const AccessService = require("../services/access.service")
 
 class AccessController {
@@ -9,7 +10,13 @@ class AccessController {
         200 - ok
         201 - created
         */
-        return res.status(201).json(await AccessService.signUp(req.body))
+        new CREATED({
+            message: 'Registed ok!',
+            metadata: await AccessService.signUp(req.body),
+            options: {
+                limit: 10
+            }
+        }).send(res)
     }
 }
 

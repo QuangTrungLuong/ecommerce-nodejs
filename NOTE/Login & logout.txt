@@ -6,3 +6,12 @@ tạo controller sign up viết login và logout trong access service
 - create access token và refresh token
 - Generate tokens
 - Get data and return login
+
+2. Logout: 
+- Viết authentication cho authUtils
+    1. Check user_id missing 
+    2. Get access token
+    3. verify token
+    4. check user in dbs
+    5. check keyStore with this userId
+    6. OK all -> return exits()

@@ -16,10 +16,11 @@ var keyTokenSchema = new Schema({
         type: String,
         required: true,
     },
-    refreshToken: {
-        type: Array,
+    refreshTokensUsed: {
+        type: Array, // nhung RT đã được sử dụng
         default: []
-    }
+    },
+    refreshToken: { type: String, required: true }
 }, {
     collection: COLLECTION_NAME,
     timestamps: true

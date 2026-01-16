@@ -1,32 +1,21 @@
 'use strict'
 const JWT = require('jsonwebtoken')
-const createTokenPair = async (payload, publicKey, privateKey) => {
+const createTokenPair = async (payload, secretKey) => {
     try {
-        // accessToken
-        const accessToken = await JWT.sign(payload, privateKey, {
-            algorithm: 'RS256',
-            expiresIn: '2 days'
+        const accessToken = JWT.sign(payload, secretKey, {
+            expiresIn: '2d'
         })
 
-        const refreshToken = await JWT.sign(payload, privateKey, {
-            algorithm: 'RS256',
-            expiresIn: '7 days'
-        })
-
-        // verifier using public token
-        JWT.verify(accessToken, publicKey, (err, decode) => {
-            if (err) {
-                console.error(`Verify::`, err)
-            } else {
-                console.log(`Decode verify::`, decode)
-            }
+        const refreshToken = JWT.sign(payload, secretKey, {
+            expiresIn: '7d'
         })
 
         return { accessToken, refreshToken }
     } catch (error) {
-
+        throw error
     }
 }
+
 
 module.exports = {
     createTokenPair
